@@ -24,7 +24,7 @@ class YoutubeService
         do {
             $params = [
                 'q' => 'maquillage',
-                'maxResults' => 50,
+                'maxResults' => 1,
                 'type' => 'video',
                 'pageToken' => $nextPageToken,
             ];
