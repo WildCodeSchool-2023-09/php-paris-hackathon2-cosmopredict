@@ -19,24 +19,30 @@ class YoutubeService
         $client = new Client();
         $client->setDeveloperKey($this->apiKey);
         $youtube = new YouTube($client);
+        $nextPageToken = null;
 
-        $params = [
-            'q' => 'maquillage',
-            'maxResults' => 55,
-            'type' => 'video',
-        ];
-
-        $searchResponse = $youtube->search->listSearch('snippet', $params);
-
-        $videos = [];
-        foreach ($searchResponse->items as $item) {
-            $videoId = $item->id->videoId;
-            $videoDetails = $youtube->videos->listVideos('snippet', ['id' => $videoId]);
-            $videos[] = [
-                'description' => $videoDetails[0]->snippet->description,
-                'uploadDate' => $videoDetails[0]->snippet->publishedAt,
+        for ($i = 1; $i < 10; $i++) {
+            $params = [
+                'q' => 'maquillage',
+                'maxResults' => 50,
+                'type' => 'video',
+                'pageToken' => $nextPageToken,
             ];
+
+            $searchResponse = $youtube->search->listSearch('snippet', $params);
+
+            $videos = [];
+            foreach ($searchResponse->items as $item) {
+                $videoId = $item->id->videoId;
+                $videoDetails = $youtube->videos->listVideos('snippet', ['id' => $videoId]);
+                $videos[] = [
+                    'description' => $videoDetails[0]->snippet->description,
+                    'uploadDate' => $videoDetails[0]->snippet->publishedAt,
+                ];
+            }
+            $nextPageToken = $searchResponse->getNextPageToken();
         }
+
         return $videos;
     }
 }
