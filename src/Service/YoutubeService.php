@@ -26,18 +26,17 @@ class YoutubeService
             'type' => 'video',
         ];
 
-        // Effectuer la recherche
         $searchResponse = $youtube->search->listSearch('snippet', $params);
 
-        // Récupérer les descriptions des vidéos
-        $descriptions = [];
+        $videos = [];
         foreach ($searchResponse->items as $item) {
             $videoId = $item->id->videoId;
-            $video = $youtube->videos->listVideos('snippet', ['id' => $videoId]);
-            $description = $video->items[0]->snippet->description;
-            $descriptions[$videoId] = $description;
+            $videoDetails = $youtube->videos->listVideos('snippet', ['id' => $videoId]);
+            $videos[] = [
+                'description' => $videoDetails[0]->snippet->description,
+                'uploadDate' => $videoDetails[0]->snippet->publishedAt,
+            ];
         }
-
-        return $descriptions;
+        return $videos;
     }
 }

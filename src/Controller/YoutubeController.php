@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\YoutubeService;
+use App\Repository\VideosRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,10 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class YoutubeController extends AbstractController
 {
     #[Route('/test', name: 'test')]
-    public function index(YoutubeService $youTubeService): Response
+    public function fetchVideos(VideosRepository $videosRepository): Response
     {
-
-        $descriptions = $youTubeService->getVideoInfo();
-        return $this->render('home/index.html.twig', ['descriptions'  => $descriptions,]);
+        $videosRepository->insertVideos();
+        return $this->render('home/index.html.twig');
     }
 }
