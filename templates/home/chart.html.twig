@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+	{{ render_chart(brandChart) }};
+	{{ render_chart(productChart) }};
+{% endblock %}
