@@ -25,33 +25,19 @@
             <input class="date" type="date" name="end"/>
         </div>
         <div>
-            <label for="products">Produit</label>
-            <select name="products">
-                <option value="Font de teint">Fond de teint</option>
-                <option value="Mascara">Mascara</option>
-                <option value="Rouges à lèvres">Rouge à lèvres</option>
-                <option value="Crème hydratante">Crème hydratante</option>
-                <option value="Fard à paupières">Fard à paupières</option>
-                <option value="Soin anti-âge">Soin anti-âge</option>
-                <option value="Exfoliant">Exfoliant</option>
-                <option value="Soin solaire">Soin solaire</option>
-                <option value="Eau micellaire">Eau micellaire</option>
-            </select>
+            <p class="cible" >Cibles</p>
+            <input class="fake" type="text" value="Produits">
         </div>
         <div>
-            <label for="brand">Marque</label>
-            <select name="brand">
-                <option value="L'Oréal">L'Oréal</option>
-                <option value="Channel">Channel</option>
-                <option value="Dior">Dior</option>
-                <option value="Clarins">Clarins</option>
-                <option value="Yves Saint-Laurent">Yves Saint-Laurent</option>
-                <option value="Guerlain">Guerlain</option>
-                <option value="Caudalie">Caudalie</option>
-                <option value="La Roche-Posay">La Roche-Posay</option>
-                <option value="Vichie">Vichie</option>
-                <option value="Nuxe">Nuxe</option>
-            </select>
+            <p class="cible"></p>
+            <input class="fake" type="text" value="Marques">
+        </div>
+        <div>
+            <p></p>
+            <div>
+                <p class="ajout-cible">Ajouter une cible</p>
+                <img src="{{ asset('build/images/plusCosmoPredict.svg') }}">
+            </div>
         </div>
     </form>
     <button form="search-form">Search</button>
