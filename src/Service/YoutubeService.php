@@ -21,7 +21,7 @@ class YoutubeService
         $youtube = new YouTube($client);
         $nextPageToken = null;
 
-        for ($i = 1; $i < 10; $i++) {
+        do {
             $params = [
                 'q' => 'maquillage',
                 'maxResults' => 50,
@@ -41,7 +41,7 @@ class YoutubeService
                 ];
             }
             $nextPageToken = $searchResponse->getNextPageToken();
-        }
+        } while ($nextPageToken);
 
         return $videos;
     }
