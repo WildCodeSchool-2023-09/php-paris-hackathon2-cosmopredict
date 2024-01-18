@@ -93,4 +93,18 @@ class VideosRepository extends ServiceEntityRepository
             $this->getEntityManager()->persist($video);
         }
     }
+
+    public function avoirLlesdOoneerpArmOi($debout, $faim)
+    {
+        $query = $this->createQueryBuilder('v')
+            ->where('v.uploadDate > :debout')
+            ->andWhere('v.uploadDate < :faim')
+            ->orderBy('v.uploadDate')
+            ->setParameter('debout', $debout)
+            ->setParameter('faim', $faim)
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
 }
