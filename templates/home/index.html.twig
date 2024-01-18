@@ -1,7 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
-
-{% block body %}
-
+{% block content %}
+    <form id="search-form" action="" method="POST">
+        <div>
+            <label for="plateforme">Plateforme</label>
+            <select name="plateforme">
+                <option value="Youtube">Youtube</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Tiktok">TikTok</option>
+                <option value="Snapchat">Snapchat</option>
+                <option value="Twitter">Twitter</option>
+            </select>
+        </div>
+        <div>
+            <label for="key-word">Mot-clés</label>
+            <input class="key-word" type="text" name="key-word"/>
+        </div>
+        <div>
+            <label id="period" for="start">Période de recherche</label>
+            <input class="date" type="date" name="start"/>
+        </div>
+        <div>
+            <label for="end"></label>
+            <input class="date" type="date" name="end"/>
+        </div>
+        <div>
+            <label for="products">Produit</label>
+            <select name="products">
+                <option value="Font de teint">Fond de teint</option>
+                <option value="Mascara">Mascara</option>
+                <option value="Rouges à lèvres">Rouge à lèvres</option>
+                <option value="Crème hydratante">Crème hydratante</option>
+                <option value="Fard à paupières">Fard à paupières</option>
+                <option value="Soin anti-âge">Soin anti-âge</option>
+                <option value="Exfoliant">Exfoliant</option>
+                <option value="Soin solaire">Soin solaire</option>
+                <option value="Eau micellaire">Eau micellaire</option>
+            </select>
+        </div>
+        <div>
+            <label for="brand">Marque</label>
+            <select name="brand">
+                <option value="L'Oréal">L'Oréal</option>
+                <option value="Channel">Channel</option>
+                <option value="Dior">Dior</option>
+                <option value="Clarins">Clarins</option>
+                <option value="Yves Saint-Laurent">Yves Saint-Laurent</option>
+                <option value="Guerlain">Guerlain</option>
+                <option value="Caudalie">Caudalie</option>
+                <option value="La Roche-Posay">La Roche-Posay</option>
+                <option value="Vichie">Vichie</option>
+                <option value="Nuxe">Nuxe</option>
+            </select>
+        </div>
+    </form>
+    <button form="search-form">Search</button>
 {% endblock %}
