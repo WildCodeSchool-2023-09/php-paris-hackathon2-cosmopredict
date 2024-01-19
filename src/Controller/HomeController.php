@@ -13,10 +13,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            return $this->render('home/result.html.twig', [
-                'contentTitle' => 'Futures tendances - Prévisions',
-                'form_data' => $_POST
-            ]);
+            return $this->redirectToRoute('app_chartjs');
         }
 
         return $this->render('home/index.html.twig', [

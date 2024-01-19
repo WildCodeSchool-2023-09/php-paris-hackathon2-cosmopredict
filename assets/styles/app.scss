@@ -150,6 +150,14 @@ body {
                 font-size: 24px;
                 font-family: CamptonLight;
             }
+
+            canvas {
+                display: block;
+                box-sizing: border-box;
+                width: 1200.889px;
+                height: auto;
+                margin-bottom: 4rem;
+            }
         }
     }
 }

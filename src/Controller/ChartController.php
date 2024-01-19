@@ -196,7 +196,7 @@ class ChartController extends AbstractController
             'maintainAspectRatio' => true,
         ]);
 
-        return $this->render('home/chart.html.twig', ['brandChart' => $brandChart, 'productChart' => $productChart]);
+        return $this->render('home/result.html.twig', ['brandChart' => $brandChart, 'productChart' => $productChart, 'contentTitle' => 'Futures tendances - Prévisions']);
     }
 
 

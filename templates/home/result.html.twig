@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h3>{{ form_data['plateforme'] }} / {{ form_data['key-word'] }} / {{ form_data['start'] }} à {{ form_data['end'] }} / {{ form_data['products'] }} / {{ form_data['brand'] }}</h3>
+    {{ render_chart(brandChart) }}
+	{{ render_chart(productChart) }}
 {% endblock %}
