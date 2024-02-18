@@ -74,6 +74,7 @@ body {
         div.content {
             position: absolute;
             padding: 50px 0 0 50px;
+            width: 1098px;
 
             form {
                 width: 1000px;
@@ -133,19 +134,6 @@ body {
                 }
             }
 
-            button {
-                width: 300px;
-                height: 50px;
-                font-size: 24px;
-                font-family: CamptonMedium;
-                color: white;
-                background-color: black;
-                position: fixed;
-                left: calc(50vw - 150px);
-                bottom: 10vh;
-                cursor: pointer;
-            }
-
             h3 {
                 font-size: 24px;
                 font-family: CamptonLight;
@@ -154,10 +142,23 @@ body {
             canvas {
                 display: block;
                 box-sizing: border-box;
-                width: 1200.889px;
                 height: auto;
                 margin-bottom: 4rem;
+                margin-right: 50px;
             }
         }
+    }
+
+    button#search {
+        width: 300px;
+        height: 50px;
+        font-size: 24px;
+        font-family: CamptonMedium;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        margin-left: calc(50vw - 150px);
+        margin-top: 10px;
+        margin-bottom: 40px;
     }
 }
